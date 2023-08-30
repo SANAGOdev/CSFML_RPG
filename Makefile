@@ -1,8 +1,16 @@
+##
+## PERSONNAL PROJECT, 2023
+## CSFML_RPG
+## File description:
+## Makefile
+##
+
 CFLAGS = -Wall -Wextra -Iinclude -lcsfml-graphics -lcsfml-window -lcsfml-audio
 
 SRC	= 	src/main.c \
 		src/menu.c \
 		src/window.c \
+		src/play.c \
 
 OBJ = $(SRC:.c=.o)
 

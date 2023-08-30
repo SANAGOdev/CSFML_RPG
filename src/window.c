@@ -5,7 +5,6 @@
 ** window.c
 */
 
-#include <SFML/Graphics.h>
 #include "window.h"
 
 sfRenderWindow *create_window(sfVideoMode video_mode, char *title)

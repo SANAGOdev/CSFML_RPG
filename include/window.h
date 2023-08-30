@@ -15,4 +15,4 @@
     sfRenderWindow *create_window(sfVideoMode video_mode, char *title);
     void center_window(sfRenderWindow *window);
 
-#endif // WINDOW_H
+#endif /* WINDOW_H */

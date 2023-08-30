@@ -18,5 +18,6 @@
     /* headers include */
     #include "menu.h"
     #include "window.h"
+    #include "play.h"
 
 #endif /* MY_H */

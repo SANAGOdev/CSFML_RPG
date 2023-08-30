@@ -11,4 +11,4 @@
 
     void game_loop(sfRenderWindow *window, sfSprite *menu_sprite);
 
-#endif // MENU_H
+#endif /* MENU_H */

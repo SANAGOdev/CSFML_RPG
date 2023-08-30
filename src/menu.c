@@ -5,8 +5,8 @@
 ** menu.c
 */
 
-#include <SFML/Graphics.h>
 #include "menu.h"
+#include "play.h"
 
 sfBool is_button_pressed(sfRenderWindow *window, sfSprite *button_sprite)
 {
@@ -36,6 +36,8 @@ void game_loop(sfRenderWindow *window, sfSprite *menu_sprite)
 
     sfEvent event;
 
+    sfBool isMenuOpen = sfTrue;
+
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
             if (event.type == sfEvtClosed) {
@@ -44,7 +46,7 @@ void game_loop(sfRenderWindow *window, sfSprite *menu_sprite)
 
             if (event.type == sfEvtMouseButtonReleased) {
                 if (is_button_pressed(window, playButton)) {
-                    // Gérer l'action pour le bouton Play ici
+                    isMenuOpen = sfFalse;
                 } else if (is_button_pressed(window, optionButton)) {
                     // Gérer l'action pour le bouton Option ici
                 } else if (is_button_pressed(window, exitButton)) {
@@ -53,12 +55,17 @@ void game_loop(sfRenderWindow *window, sfSprite *menu_sprite)
             }
         }
 
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawSprite(window, menu_sprite, NULL);
-        sfRenderWindow_drawSprite(window, playButton, NULL);
-        sfRenderWindow_drawSprite(window, optionButton, NULL);
-        sfRenderWindow_drawSprite(window, exitButton, NULL);
-        sfRenderWindow_display(window);
+        if (isMenuOpen) {
+            sfRenderWindow_clear(window, sfBlack);
+            sfRenderWindow_drawSprite(window, menu_sprite, NULL);
+            sfRenderWindow_drawSprite(window, playButton, NULL);
+            sfRenderWindow_drawSprite(window, optionButton, NULL);
+            sfRenderWindow_drawSprite(window, exitButton, NULL);
+            sfRenderWindow_display(window);
+        }
+        if (isMenuOpen == sfFalse) {
+            start_game(window);
+        }
     }
 
     sfTexture_destroy(playTexture);
@@ -68,4 +75,3 @@ void game_loop(sfRenderWindow *window, sfSprite *menu_sprite)
     sfSprite_destroy(optionButton);
     sfSprite_destroy(exitButton);
 }
-
