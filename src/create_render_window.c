@@ -9,6 +9,6 @@
 
 sfRenderWindow *create_window(sfVideoMode video_mode, char *title)
 {
-    sfRenderWindow *window = sfRenderWindow_create(video_mode, title, sfClose | sfResize, NULL);
+    sfRenderWindow *window = sfRenderWindow_create(video_mode, title, sfResize | sfClose, NULL);
     return window;
 }
