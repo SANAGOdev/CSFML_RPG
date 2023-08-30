@@ -1,7 +1,8 @@
 CFLAGS = -Wall -Wextra -Iinclude -lcsfml-graphics -lcsfml-window -lcsfml-audio
 
 SRC	= 	src/main.c \
-		src/create_render_window.c \
+		src/menu.c \
+		src/window.c \
 
 OBJ = $(SRC:.c=.o)
 

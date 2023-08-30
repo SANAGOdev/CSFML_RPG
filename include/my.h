@@ -14,11 +14,9 @@
     #include <SFML/Window.h>
     #include <SFML/Graphics.h>
     #include <SFML/Audio.h>
-     
-    /* Important Macros */
-    #define GAME_TITLE "Mon RPG"
 
-    /* function headers */
-    sfRenderWindow *create_window(sfVideoMode video_mode, char *title);
+    /* headers include */
+    #include "menu.h"
+    #include "window.h"
 
 #endif /* MY_H */
